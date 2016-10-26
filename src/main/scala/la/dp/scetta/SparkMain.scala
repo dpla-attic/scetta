@@ -23,6 +23,8 @@ object SparkMain extends App with CdlMapping {
   val outputData = inputData.map(record => (record._1, process(record._2)))
   outputData.saveAsSequenceFile(args(2), Some(classOf[org.apache.hadoop.io.compress.DefaultCodec]))
 
+  sc.stop
+
   def process(inputData: Array[Byte]): String = {
     try {
       map(new String(inputData, "utf8"))
