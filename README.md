@@ -34,6 +34,9 @@ problems and their stacktraces, if any.
 
 The Sequencefile version of our data is in S3 here: s3://dpla-mdpdb/cdl.seq
 
+To run this directly against S3
+`sbt "run-main la.dp.scetta.SparkMain local[4] s3n://access_key_id:secret_key@dpla-mdpdb/cdl.seq <outfile.seq>"`
+
 Basically, the only step required to generate that file was to point the `tar-to-seq` program available 
 [here](https://stuartsierra.com/2008/04/24/a-million-little-files) at the cdl_original_record.tar.gz file. The process 
 took 46 seconds on my laptop.
@@ -56,3 +59,5 @@ specifying the master node in place of this parameter.
 
 If you catch it while it's running, there's a Spark dashboard available at 
 [http://localhost:4040/jobs/](http://localhost:4040/jobs/).
+
+
