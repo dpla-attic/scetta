@@ -35,7 +35,8 @@ problems and their stacktraces, if any.
 The Sequencefile version of our data is in S3 here: s3://dpla-mdpdb/cdl.seq
 
 Basically, the only step required to generate that file was to point the `tar-to-seq` program available 
-[here](https://stuartsierra.com/2008/04/24/a-million-little-files) at it. The process took 46 seconds on my laptop.
+[here](https://stuartsierra.com/2008/04/24/a-million-little-files) at the cdl_original_record.tar.gz file. The process 
+took 46 seconds on my laptop.
 
 A Sequencefile is a record-based, splittable file format that comes from the Hadoop world. Each "line" in that file 
 is a key that's the original filename, and a value that contains the bytes of each file. The whole file is split into 
