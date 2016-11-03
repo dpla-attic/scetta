@@ -15,7 +15,6 @@ object SparkMain extends App with CdlMapping {
   val conf = new SparkConf()
     .setAppName("CDL Mapping")
     .setMaster(args(0))
-    .set("spark.executor.instances", "4")
 
   val sc = new SparkContext(conf)
 
